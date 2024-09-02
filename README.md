@@ -1,1 +1,3 @@
 # Reproducible_result
+
+This is a folder meant to aid generating the reproducible result. The Python notebook plus the data provided should be sufficient to generate the reproducible result. The own_data folders contain semi-compiled basilisk scripts alongside a bash file which should fully compile and run them on any machine that can compile C code. Detalied instructions are also provided in the appendix of the report.
