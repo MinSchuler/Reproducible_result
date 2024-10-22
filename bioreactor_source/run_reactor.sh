@@ -1,14 +1,15 @@
 file="reactor.c"
 
-THREADS=8
+# For the moment his has to be set to 1 otw the code breaks
+THREADS=1
 
 # Loop over paramter to allow error study more easily (feel free to change this)
 
 for VISCOSITY in 0.0015 0.003; do
 
   # Create filename based on parameter of intrest
-  cp -r reactor_master/ Reactor-Level$VISCOSITY
-	cd Reactor-Level$VISCOSITY
+  cp -r reactor_master/ Reactor-Visc$VISCOSITY
+	cd Reactor-Visc$VISCOSITY
 
   # Compile Basilisk including MPI
   CC99='mpicc -std=c99' qcc -O2 -Wall -D_MPI=1 "$file" -o "out_reactor" -lm -L$BASILISK/gl -lglutils -lfb_glx -lGLU -lGLEW -lGL -lX11
